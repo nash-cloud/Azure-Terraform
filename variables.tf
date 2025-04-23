@@ -12,7 +12,7 @@ variable "resource_group_name_prefix" {
 
 variable "account_replication_type" {
   type        = string
-  default     = "RAGRS"
+  default     = "LRS"
   description = "The type of replication used for storage."
 }
 
@@ -30,6 +30,6 @@ variable "min_tls_version" {
 
 variable "is_hns_enabled" {
   type        = bool
-  default     = true
+  default     = false
   description = "Boolean indicating whether the account is enabled for hierarchical namespace."
 }
