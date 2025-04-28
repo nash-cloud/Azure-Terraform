@@ -29,3 +29,10 @@ resource "azurerm_storage_account" "sa" {
   is_hns_enabled                  = var.is_hns_enabled
   allow_nested_items_to_be_public = false
 }
+
+# Create Storage Container
+resource "azurerm_storage_container" "sc" {
+  name                  = "dj${random_string.name.result}"
+  storage_account_name  = azurerm_storage_account.sa.name
+  container_access_type = "private"
+}
